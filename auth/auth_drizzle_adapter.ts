@@ -1,7 +1,7 @@
 import { DrizzleAdapter } from '@auth/drizzle-adapter'
-import { drizzle_db_ } from '@rappstack/domain--server'
+import { drizzle_db_ } from '@rappstack/domain--server/drizzle'
 import { and, eq } from 'drizzle-orm'
-import type { wide_app_ctx_T } from 'relysjs/server'
+import { type wide_app_ctx_T } from 'relysjs/server'
 import { account, user } from '../schema/index.js'
 export function auth_drizzle_adapter_(app_ctx:wide_app_ctx_T) {
 	return {
