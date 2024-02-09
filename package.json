@@ -1,0 +1,54 @@
+{
+  "name": "@rappstack/domain--server--auth",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "domain library targeting the server for auth",
+  "keywords": [
+    "rappstack",
+    "reactive",
+    "full-stack",
+    "domain",
+    "server",
+    "auth",
+    "authentication"
+  ],
+  "homepage": "https://github.com/rappstack/domain--server--auth",
+  "bugs": {
+    "url": "https://github.com/rappstack/domain--server--auth/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rappstack/domain--server--auth.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Brian Takita",
+  "types": "index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./schema": "./schema/index.ts",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "*.d.ts",
+    "*.js",
+    "*.json",
+    "schema"
+  ],
+  "dependencies": {
+    "@auth/core": "^0.26.3",
+    "@auth/drizzle-adapter": "^0.6.3",
+    "ctx-core": "^6.1.0",
+    "drizzle-kit": "^0.20.14",
+    "drizzle-orm": "^0.29.3",
+    "elysia": "^0.8.16",
+    "relementjs": "^0.66.0",
+    "relysjs": "^1.11.0",
+    "rmemo": "^0.44.0"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
