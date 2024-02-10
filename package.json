@@ -25,6 +25,8 @@
   "types": "index.ts",
   "exports": {
     ".": "./index.ts",
+    "./auth": "./auth/index.ts",
+    "./middleware": "./middleware/index.ts",
     "./schema": "./schema/index.ts",
     "./package.json": "./package.json"
   },
@@ -32,6 +34,9 @@
     "*.d.ts",
     "*.js",
     "*.json",
+    "auth",
+    "config",
+    "middleware",
     "schema"
   ],
   "dependencies": {
