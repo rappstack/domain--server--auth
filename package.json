@@ -47,7 +47,7 @@
     "drizzle-orm": "^0.29.3",
     "elysia": "^0.8.16",
     "relementjs": "^0.71.9",
-    "relysjs": "^1.11.3",
+    "relysjs": "^1.11.5",
     "rmemo": "^0.44.2"
   },
   "devDependencies": {
