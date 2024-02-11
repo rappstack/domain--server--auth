@@ -46,7 +46,7 @@
     "drizzle-kit": "^0.20.14",
     "drizzle-orm": "^0.29.3",
     "elysia": "^0.8.16",
-    "relementjs": "^0.71.10",
+    "relementjs": "^0.71.11",
     "relysjs": "^1.11.6",
     "rmemo": "^0.44.3"
   },
