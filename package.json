@@ -42,13 +42,13 @@
   "dependencies": {
     "@auth/core": "^0.26.3",
     "@auth/drizzle-adapter": "^0.6.3",
-    "ctx-core": "^6.2.3",
+    "ctx-core": "^6.3.0",
     "drizzle-kit": "^0.20.14",
     "drizzle-orm": "^0.29.3",
     "elysia": "^0.8.17",
-    "relementjs": "^0.72.3",
-    "relysjs": "^1.12.2",
-    "rmemo": "^0.45.2"
+    "relementjs": "^0.73.0",
+    "relysjs": "^1.13.0",
+    "rmemo": "^0.46.0"
   },
   "devDependencies": {
     "bun-types": "latest"
