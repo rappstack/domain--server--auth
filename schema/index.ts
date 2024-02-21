@@ -1,46 +1,45 @@
 import type { AdapterAccount } from '@auth/core/adapters'
 import { integer, primaryKey, sqliteTable, text, } from 'drizzle-orm/sqlite-core'
 export const user_tbl = sqliteTable('user', {
-	user_id: text('user_id').notNull().primaryKey(),
+	userId: text('userId').notNull().primaryKey(),
 	name: text('name'),
 	email: text('email'),
-	email_verify_dts: integer('email_verify_dts', { mode: 'timestamp_ms' }),
+	emailVerified: integer('emailVerified', { mode: 'timestamp_ms' }),
 	image: text('image'),
 })
 export const account_tbl = sqliteTable('account', {
-	user_id:
-		text('user_id')
+	userId:
+		text('userId')
 			.notNull()
-			.references(()=>user_tbl.user_id, { onDelete: 'cascade' }),
+			.references(()=>user_tbl.userId, { onDelete: 'cascade' }),
 	type: text('type').$type<AdapterAccount['type']>().notNull(),
 	provider: text('provider').notNull(),
-	provider_account_id: text('provider_account_id').notNull(),
+	providerAccountId: text('providerAccountId').notNull(),
 	refresh_token: text('refresh_token'),
 	access_token: text('access_token'),
-	expire_dts: integer('expire_dts', { mode: 'timestamp_ms' }),
+	expires_at: integer('expires_at'),
 	token_type: text('token_type'),
 	scope: text('scope'),
 	id_token: text('id_token'),
 	session_state: text('session_state'),
-}, table=>({
-	pk: primaryKey({
-		columns: [table.provider, table.provider_account_id]
-	})
+}, account=>({
+	compoundKey: primaryKey({
+		columns: [account.provider, account.providerAccountId],
+	}),
 }))
 export const session_tbl = sqliteTable('session', {
-	session_token: text('session_token').notNull().primaryKey(),
-	user_id:
-		text('user_id')
+	sessionToken: text('sessionToken').notNull().primaryKey(),
+	userId:
+		text('userId')
 			.notNull()
-			.references(()=>user_tbl.user_id, { onDelete: 'cascade' }),
-	expire_dts: integer('expire_dts', { mode: 'timestamp_ms' }).notNull(),
+			.references(()=>user_tbl.userId, { onDelete: 'cascade' }),
+	expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
 })
-export const verification_token_tbl = sqliteTable('verification_token', {
-	identifier: text('identifier').notNull(),
-	token: text('token').notNull(),
-	expire_dts: integer('expire_dts', { mode: 'timestamp_ms' }).notNull(),
-}, table=>({
-	pk: primaryKey({
-		columns: [table.identifier, table.token]
-	})
-}))
+export const verificationToken_tbl = sqliteTable('verificationToken', {
+		identifier: text('identifier').notNull(),
+		token: text('token').notNull(),
+		expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
+	},
+	vt=>({
+		compoundKey: primaryKey({ columns: [vt.identifier, vt.token] }),
+	}))
