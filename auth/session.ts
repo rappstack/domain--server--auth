@@ -1,11 +1,25 @@
 import { Auth } from '@auth/core'
 import { type Session } from '@auth/core/types'
-import { request_, request_url_, type request_ctx_T } from 'relysjs/server'
+import { id_be_memo_pair_, request_, type request_ctx_T, request_url_ } from 'relysjs/server'
 import { auth_config_ } from '../config/index.js'
+export const [
+	,
+	session_
+] = id_be_memo_pair_(
+	'session',
+	(ctx:request_ctx_T, session$)=>{
+		session__get(ctx)
+			.then(session=>{
+				session$._ = session
+			})
+			.catch(err=>console.error(err))
+		return session$.val
+	}
+)
 /**
  * Roundabout way to get the session since @auth/core doesn't export it
  */
-export async function session_(request_ctx:request_ctx_T) {
+export async function session__get(request_ctx:request_ctx_T) {
 	try {
 		const url = `${request_url_(request_ctx).origin}/api/auth/session`
 		const session = await Auth(
