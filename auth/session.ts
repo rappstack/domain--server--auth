@@ -22,9 +22,20 @@ export const [
 export async function session__get(request_ctx:request_ctx_T) {
 	try {
 		const url = `${request_url_(request_ctx).origin}/api/auth/session`
+		console.debug('session__get|debug|1', {
+			url,
+			headers: request_(request_ctx).headers
+		})
+		const res = await fetch(url, {
+			method: 'POST',
+			headers: request_(request_ctx).headers
+		})
+		console.debug('session__get|debug|2', {
+			json: await res.json()
+		})
 		const session = await Auth(
 			new Request(url, {
-				method: 'GET',
+				method: 'POST',
 				headers: request_(request_ctx).headers,
 			}),
 			auth_config_(request_ctx)!)

@@ -40,17 +40,22 @@
     "schema"
   ],
   "dependencies": {
-    "@auth/core": "^0.27.0",
-    "@auth/drizzle-adapter": "^0.7.0",
-    "ctx-core": "^6.4.4",
+    "@persontric/adapter-drizzle": "^0.0.0",
+    "@persontric/adapter-sqlite": "^0.0.0",
+    "arctic": "^1.2.0",
+    "ctx-core": "^6.4.5",
     "drizzle-kit": "^0.20.14",
-    "drizzle-orm": "^0.29.3",
+    "drizzle-orm": "^0.29.4",
     "elysia": "^0.8.17",
-    "relementjs": "^0.73.4",
-    "relysjs": "^1.14.7",
-    "rmemo": "^0.46.4"
+    "lucia": "^3.0.1",
+    "oslo": "^1.1.2",
+    "relementjs": "^0.73.5",
+    "relysjs": "^1.14.8",
+    "rmemo": "^0.46.5"
   },
   "devDependencies": {
+    "@persontric/adapter-drizzle": "workspace:*",
+    "@persontric/adapter-sqlite": "workspace:*",
     "bun-types": "latest"
   },
   "peerDependencies": {
