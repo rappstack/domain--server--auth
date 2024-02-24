@@ -26,7 +26,6 @@
   "exports": {
     ".": "./index.ts",
     "./auth": "./auth/index.ts",
-    "./middleware": "./middleware/index.ts",
     "./schema": "./schema/index.ts",
     "./package.json": "./package.json"
   },
@@ -36,7 +35,6 @@
     "*.json",
     "auth",
     "config",
-    "middleware",
     "schema"
   ],
   "dependencies": {
@@ -47,8 +45,8 @@
     "drizzle-kit": "^0.20.14",
     "drizzle-orm": "^0.29.4",
     "elysia": "^0.8.17",
-    "lucia": "^3.0.1",
     "oslo": "^1.1.2",
+    "persontric": "workspace:*",
     "relementjs": "^0.73.5",
     "relysjs": "^1.14.8",
     "rmemo": "^0.46.5"

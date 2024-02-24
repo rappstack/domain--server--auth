@@ -1,46 +1,53 @@
-import { Auth } from '@auth/core'
-import { type Session } from '@auth/core/types'
-import { id_be_memo_pair_, request_, type request_ctx_T, request_url_ } from 'relysjs/server'
-import { auth_config_ } from '../config/index.js'
+import { id_be_memo_pair_, request_, type request_ctx_T, run } from 'relysjs/server'
+import { persontric_ } from './persontric.js'
 export const [
 	,
-	session_
+	session_id_
 ] = id_be_memo_pair_(
-	'session',
-	(ctx:request_ctx_T, session$)=>{
-		session__get(ctx)
-			.then(session=>{
-				session$._ = session
-			})
-			.catch(err=>console.error(err))
-		return session$.val
+	'session_id',
+	(ctx:request_ctx_T)=>{
+		const Cookie = request_(ctx).headers.get('Cookie') ?? ''
+		return persontric_(ctx).session_cookie__read(Cookie)
 	}
 )
-/**
- * Roundabout way to get the session since @auth/core doesn't export it
- */
-export async function session__get(request_ctx:request_ctx_T) {
-	try {
-		const url = `${request_url_(request_ctx).origin}/api/auth/session`
-		console.debug('session__get|debug|1', {
-			url,
-			headers: request_(request_ctx).headers
+export const [
+	,
+	no_session_401_response_
+] = id_be_memo_pair_(
+	'no_session_401_response',
+	(ctx:request_ctx_T)=>
+		session_id_(ctx)
+			? null
+			: new Response(null, { status: 401 })
+)
+export const [
+	,
+	session_headers_
+] = id_be_memo_pair_<Headers|undefined, unknown, request_ctx_T>(
+	'session_headers',
+	(ctx, session_headers$)=>{
+		const session_id = session_id_(ctx)
+		if (!session_id) return new Headers()
+		run(async ()=>{
+			const headers = new Headers()
+			let persontric = persontric_(ctx)
+			const {
+				person,
+				session
+			} = await persontric.session__validate(session_id)
+			const session_cookie =
+				!session
+					? persontric.session__createBlankCookie()
+					: session.fresh
+						? persontric.session__createCookie(session_id)
+						: null
+			if (session_cookie) {
+				headers.append('Set-Cookie', session_cookie.serialize())
+			}
+			session_headers$._ = headers
+		}).catch(err=>{
+			console.error(err)
+			session_headers$._ = new Headers()
 		})
-		const res = await fetch(url, {
-			method: 'POST',
-			headers: request_(request_ctx).headers
-		})
-		console.debug('session__get|debug|2', {
-			json: await res.json()
-		})
-		const session = await Auth(
-			new Request(url, {
-				method: 'POST',
-				headers: request_(request_ctx).headers,
-			}),
-			auth_config_(request_ctx)!)
-		return await session.json() as Session
-	} catch (err) {
-		return null
 	}
-}
+)
