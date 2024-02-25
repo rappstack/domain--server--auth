@@ -41,15 +41,15 @@
     "@persontric/adapter-drizzle": "^0.0.0",
     "@persontric/adapter-sqlite": "^0.0.0",
     "arctic": "^1.2.1",
-    "ctx-core": "^6.4.5",
+    "ctx-core": "^6.5.0",
     "drizzle-kit": "^0.20.14",
     "drizzle-orm": "^0.29.4",
     "elysia": "^0.8.17",
     "oslo": "^1.1.3",
     "persontric": "workspace:*",
-    "relementjs": "^0.73.5",
-    "relysjs": "^1.14.8",
-    "rmemo": "^0.46.5"
+    "relementjs": "^0.73.7",
+    "relysjs": "^1.14.10",
+    "rmemo": "^0.46.7"
   },
   "devDependencies": {
     "@persontric/adapter-drizzle": "workspace:*",
