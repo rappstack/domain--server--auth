@@ -10,8 +10,7 @@ export const [
 ] = ns_id_be_sig_triple_(
 	'app',
 	'persontric',
-	ctx=>new Persontric(
-		auth_adapter_(ctx)))
+	ctx=>new Persontric(auth_adapter_(ctx)))
 export const [
 	,
 	auth_adapter_,
