@@ -10,15 +10,9 @@ export const [
 		if (request.method === 'GET') return null
 		const header_origin = request.headers.get('Origin')
 		const header_host = request.headers.get('Host')
-		console.debug('csrf_403_response|debug|1', {
-			headers: request.headers,
-			header_origin,
-			header_host,
-		})
 		return (
 			!header_origin || !header_host || !verifyRequestOrigin(header_origin, [header_host])
 				? new Response(null, { status: 403 })
 				: null
 		)
-	}
-)
+	})

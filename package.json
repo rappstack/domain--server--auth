@@ -8,6 +8,7 @@
     "reactive",
     "full-stack",
     "domain",
+    "google",
     "server",
     "auth",
     "authentication"
@@ -26,6 +27,7 @@
   "exports": {
     ".": "./index.ts",
     "./auth": "./auth/index.ts",
+    "./google": "./google/index.ts",
     "./schema": "./schema/index.ts",
     "./package.json": "./package.json"
   },
@@ -34,26 +36,22 @@
     "*.js",
     "*.json",
     "auth",
+    "google",
     "config",
     "schema"
   ],
   "dependencies": {
-    "@persontric/adapter-drizzle": "^0.0.0",
-    "@persontric/adapter-sqlite": "^0.0.0",
     "arctic": "^1.2.1",
     "ctx-core": "^6.5.0",
     "drizzle-kit": "^0.20.14",
     "drizzle-orm": "^0.29.4",
     "elysia": "^0.8.17",
     "oslo": "^1.1.3",
-    "persontric": "workspace:*",
     "relementjs": "^0.74.0",
     "relysjs": "^1.14.12",
     "rmemo": "^0.46.7"
   },
   "devDependencies": {
-    "@persontric/adapter-drizzle": "workspace:*",
-    "@persontric/adapter-sqlite": "workspace:*",
     "bun-types": "latest"
   },
   "peerDependencies": {
