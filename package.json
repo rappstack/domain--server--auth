@@ -37,7 +37,6 @@
     "*.json",
     "auth",
     "google",
-    "config",
     "schema"
   ],
   "dependencies": {
