@@ -46,7 +46,7 @@
     "drizzle-orm": "^0.30.4",
     "elysia": "^1.0.7",
     "oslo": "^1.1.3",
-    "relementjs": "^0.75.2",
+    "relementjs": "^0.75.5",
     "relysjs": "^1.17.4",
     "rmemo": "^0.47.2"
   },
