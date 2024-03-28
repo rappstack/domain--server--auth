@@ -43,7 +43,7 @@
     "arctic": "^1.4.0",
     "ctx-core": "^6.7.0",
     "drizzle-kit": "^0.20.14",
-    "drizzle-orm": "^0.30.5",
+    "drizzle-orm": "^0.30.6",
     "elysia": "^1.0.9",
     "oslo": "^1.2.0",
     "relementjs": "^0.77.0",
