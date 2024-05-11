@@ -42,12 +42,12 @@
   "dependencies": {
     "arctic": "^1.8.1",
     "ctx-core": "^7.2.7",
-    "drizzle-kit": "^0.21.0",
+    "drizzle-kit": "^0.21.1",
     "drizzle-orm": "^0.30.10",
-    "elysia": "^1.0.17",
+    "elysia": "^1.0.18",
     "oslo": "^1.2.0",
     "relementjs": "^0.80.7",
-    "relysjs": "^1.21.25",
+    "relysjs": "^1.21.27",
     "rmemo": "^0.51.7"
   },
   "devDependencies": {
