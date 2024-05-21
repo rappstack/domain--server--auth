@@ -44,10 +44,10 @@
     "ctx-core": "^7.2.10",
     "drizzle-kit": "^0.21.2",
     "drizzle-orm": "^0.30.10",
-    "elysia": "^1.0.20",
+    "elysia": "^1.0.21",
     "oslo": "^1.2.0",
     "relementjs": "^0.80.10",
-    "relysjs": "^1.21.30",
+    "relysjs": "^1.21.31",
     "rmemo": "^0.51.10"
   },
   "devDependencies": {
