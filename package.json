@@ -40,9 +40,9 @@
     "schema"
   ],
   "dependencies": {
-    "arctic": "^1.8.1",
+    "arctic": "^1.9.0",
     "ctx-core": "^7.2.10",
-    "drizzle-kit": "^0.21.2",
+    "drizzle-kit": "^0.21.3",
     "drizzle-orm": "^0.30.10",
     "elysia": "^1.0.21",
     "oslo": "^1.2.0",
