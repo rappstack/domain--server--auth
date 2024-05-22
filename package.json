@@ -47,7 +47,7 @@
     "elysia": "^1.0.21",
     "oslo": "^1.2.0",
     "relementjs": "^0.80.10",
-    "relysjs": "^1.21.31",
+    "relysjs": "^1.21.32",
     "rmemo": "^0.51.10"
   },
   "devDependencies": {
