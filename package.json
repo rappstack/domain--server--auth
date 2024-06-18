@@ -41,14 +41,14 @@
   ],
   "dependencies": {
     "arctic": "^1.9.1",
-    "ctx-core": "^7.2.19",
+    "ctx-core": "^7.2.20",
     "drizzle-kit": "^0.22.7",
     "drizzle-orm": "^0.31.2",
     "elysia": "^1.0.23",
     "oslo": "^1.2.0",
-    "relementjs": "^0.80.18",
-    "relysjs": "^1.21.50",
-    "rmemo": "^0.51.19"
+    "relementjs": "^0.80.19",
+    "relysjs": "^1.21.51",
+    "rmemo": "^0.51.20"
   },
   "devDependencies": {
     "bun-types": "latest"
