@@ -42,7 +42,7 @@
   "dependencies": {
     "arctic": "^1.9.1",
     "ctx-core": "^7.2.25",
-    "drizzle-kit": "^0.22.7",
+    "drizzle-kit": "^0.22.8",
     "drizzle-orm": "^0.31.2",
     "elysia": "^1.0.25",
     "oslo": "^1.2.1",
