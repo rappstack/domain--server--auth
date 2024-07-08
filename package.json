@@ -43,11 +43,11 @@
     "arctic": "^1.9.1",
     "ctx-core": "^7.2.27",
     "drizzle-kit": "^0.22.8",
-    "drizzle-orm": "^0.31.2",
+    "drizzle-orm": "^0.31.4",
     "elysia": "^1.0.27",
     "oslo": "^1.2.1",
     "relementjs": "^0.80.26",
-    "relysjs": "^1.21.62",
+    "relysjs": "^1.21.63",
     "rmemo": "^0.51.27"
   },
   "devDependencies": {
