@@ -40,7 +40,7 @@
     "schema"
   ],
   "dependencies": {
-    "arctic": "^1.9.1",
+    "arctic": "^1.9.2",
     "ctx-core": "^7.2.27",
     "drizzle-kit": "^0.23.0",
     "drizzle-orm": "^0.32.0",
