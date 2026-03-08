@@ -1,5 +1,5 @@
 import { ns_id_be_sig_triple_ } from 'ctx-core/rmemo'
-import type { wide_app_ctx_T } from 'relysjs/server'
+import type { wide_app_ctx_T } from 'rebuildjs/server'
 import { person_tbl as _person_tbl } from '../schema/index.js'
 import type { db_person_T, person_T, person_tbl_T } from './_types.js'
 export const [
